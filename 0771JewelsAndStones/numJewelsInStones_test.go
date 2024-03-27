@@ -6,35 +6,31 @@ import (
 )
 
 type TestCase struct {
-	nums   []int
+	jewels string
+	stones string
 	result int
 }
 
-func TestNumIdenticalPairs(t *testing.T) {
-	test1 := TestCase{[]int{1, 2, 3, 1, 1, 3}, 4}
-	test2 := TestCase{[]int{1, 1, 1, 1}, 6}
-	test3 := TestCase{[]int{1, 2, 3}, 0}
+func TestNumJewelsInStones(t *testing.T) {
+
+	test1 := TestCase{"aA", "aAAbbbb", 3}
+
+	test2 := TestCase{"z", "ZZ", 0}
 
 	t.Run("Test case 1", func(t *testing.T) {
-		got := numIdenticalPairs(test1.nums)
+		got := numJewelsInStones(test1.jewels, test1.stones)
 		want := test1.result
 		checkResult(t, got, want)
 
 	})
 
 	t.Run("Test case 2", func(t *testing.T) {
-		got := numIdenticalPairs(test2.nums)
+		got := numJewelsInStones(test2.jewels, test2.stones)
 		want := test2.result
 		checkResult(t, got, want)
 
 	})
 
-	t.Run("Test case 3", func(t *testing.T) {
-		got := numIdenticalPairs(test3.nums)
-		want := test3.result
-		checkResult(t, got, want)
-
-	})
 }
 
 func checkResult(t testing.TB, got, want int) {

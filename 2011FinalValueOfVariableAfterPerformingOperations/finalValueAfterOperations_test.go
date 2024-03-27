@@ -10,7 +10,7 @@ type TestCase struct {
 	result     int
 }
 
-func TestBuildArray(t *testing.T) {
+func TestFinalValueAfterOperations(t *testing.T) {
 	test1 := TestCase{
 		[]string{"--X", "X++", "X++"},
 		1,
