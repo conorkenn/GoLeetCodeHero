@@ -22,5 +22,8 @@ Output: 1
 
 ## Answer
 ```
-
+func countSegments(s string) int {
+	words := strings.Fields(s)
+	return len(words)
+}
 ```
